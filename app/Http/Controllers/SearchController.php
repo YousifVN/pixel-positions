@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Job;
+use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
@@ -11,7 +11,7 @@ class SearchController extends Controller
     {
         $jobs = Job::query()
             ->with(['employer', 'tags'])
-            ->where('title', 'like', '%' . request('q') . '%')
+            ->where('title', 'LIKE', '%' . request('q') . '%')
             ->get();
 
         return view('results', ['jobs' => $jobs]);

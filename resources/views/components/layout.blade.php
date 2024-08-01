@@ -22,7 +22,7 @@
             </div>
 
             <div class="space-x-6 font-bold">
-                <a href="#">Jobs</a>
+                <a href="/">Jobs</a>
                 <a href="#">Careers</a>
                 <a href="#">Salaries</a>
                 <a href="#">Companies</a>
@@ -32,9 +32,10 @@
             <div class="flex space-x-6 font-bold">
                 <a href="/jobs/create">Post a Job</a>
 
-                <form action="/logout" method="POST">
+                <form method="POST" action="/logout">
                     @csrf
                     @method('DELETE')
+
                     <button>Log Out</button>
                 </form>
             </div>
