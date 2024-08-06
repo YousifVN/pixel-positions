@@ -16,8 +16,10 @@ class TagFactory extends Factory
      */
     public function definition(): array
     {
+        $careers = ['IT', 'Sales', 'Management'];
+
         return [
-            'name' => fake()->unique()->word,
+            'name' => $this->faker->unique()->randomElement($careers),
         ];
     }
 }
